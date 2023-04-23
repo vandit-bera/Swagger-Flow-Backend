@@ -1,0 +1,40 @@
+openapi: "3.0.0"
+info:
+  title: Swagger flow by Vandit
+  description: I've use Swagger API for the best Documentation.
+  version: 1.1.0
+  contact:
+   email: vanditbera@gmail.com
+   url: "https://vanditbera.in/"
+
+# servers:
+#   - url: "https://localhost:4000/api/v1"
+#     description: for localhost - secure
+#   - url: "http://localhost:4000/api/v1"
+#     description: for localhost - regular
+
+servers:
+  - url: "{protocol}://localhost:4000/api/{version}"
+    description: for localhost
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+      version:
+        enum:
+          - v1
+          - v2
+        default: v1
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+    BearerAuth:
+      type: http
+      scheme: bearer
+
