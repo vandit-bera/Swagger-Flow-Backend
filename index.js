@@ -33,8 +33,8 @@ app.get("/", (req, res) => {
     res.status(200).send("Hello, Vandit")
 })
 
-app.get("/api/v1/course", (req, res) => {
-    res.status(200).send("Hello from /api/v1/course")
+app.get("/api/v1/test", (req, res) => {
+    res.status(200).send("Hello from /api/v1/test")
 })
 
 app.listen(PORT, () => {

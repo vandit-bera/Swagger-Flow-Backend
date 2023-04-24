@@ -39,11 +39,11 @@ components:
       scheme: bearer
 
 paths:
-  /course:
+  /test:
     get:
       tags:
-        - Courses
-      summary: returns a message for course
+        - Tests
+      summary: returns a message for test
       responses:
         200:
           description: All Good and Success
