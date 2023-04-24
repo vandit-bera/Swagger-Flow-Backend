@@ -37,6 +37,10 @@ app.get("/api/v1/test", (req, res) => {
     res.status(200).send("Hello from /api/v1/test")
 })
 
+app.get("/api/v1/testobject", (req, res) => {
+    res.status(200).send({ id: "1", name: "NextJS", price: "1000" })
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`)
 })
