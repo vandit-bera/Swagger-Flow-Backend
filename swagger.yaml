@@ -21,7 +21,7 @@ servers:
         enum:
           - http
           - https
-        default: https
+        default: http
       version:
         enum:
           - v1
@@ -38,3 +38,21 @@ components:
       type: http
       scheme: bearer
 
+paths:
+  /course:
+    get:
+      tags:
+        - Courses
+      summary: returns a message for course
+      responses:
+        200:
+          description: All Good and Success
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "My string"
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
