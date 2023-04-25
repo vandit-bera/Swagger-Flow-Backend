@@ -11,7 +11,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = 4000
 
-let course = [
+let courses = [
     {
         id: "1",
         name: "ReactJS",
@@ -39,6 +39,10 @@ app.get("/api/v1/test", (req, res) => {
 
 app.get("/api/v1/testobject", (req, res) => {
     res.status(200).send({ id: "1", name: "NextJS", price: "1000" })
+})
+
+app.get("/api/v1/courses", (req, res) => {
+    res.status(200).send(courses)
 })
 
 app.listen(PORT, () => {
