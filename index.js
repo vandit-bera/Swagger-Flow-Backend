@@ -45,6 +45,11 @@ app.get("/api/v1/courses", (req, res) => {
     res.status(200).send(courses)
 })
 
+app.get("/api/v1/mycourses/:courseId", (req, res) => {
+    const myCourses = courses.find((course) => course.id === req.params.courseId)
+    res.status(200).send(myCourses)
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`)
 })
