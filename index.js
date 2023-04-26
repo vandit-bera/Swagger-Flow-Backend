@@ -24,7 +24,7 @@ let courses = [
     },
     {
         id: "3",
-        name: "AngulaJS",
+        name: "AngularJS",
         price: 499
     }
 ]
