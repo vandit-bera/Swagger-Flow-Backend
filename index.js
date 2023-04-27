@@ -9,6 +9,8 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.use(express.json())
+
 const PORT = 4000
 
 let courses = [
@@ -48,6 +50,12 @@ app.get("/api/v1/courses", (req, res) => {
 app.get("/api/v1/mycourses/:courseId", (req, res) => {
     const myCourses = courses.find((course) => course.id === req.params.courseId)
     res.status(200).send(myCourses)
+})
+
+app.post("/api/v1/addcourse", (req, res) => {
+    console.log(req.body)
+    courses.push(req.body)
+    res.status(200).send(true)
 })
 
 app.listen(PORT, () => {
