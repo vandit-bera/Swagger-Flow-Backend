@@ -112,7 +112,7 @@ paths:
       parameters:
         - name: courseId
           in: path
-          required: truw
+          required: true
           default: 3
           schema:
             type: string
