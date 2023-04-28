@@ -167,3 +167,37 @@ paths:
           description: Bad request
         500:
           description: Internal server error
+  /coursequery:
+    get:
+      tags:
+        - Array
+      summary: trying to learn about query
+      parameters:
+        - name: location
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [dhoraji, rajkot, ahmedabad]
+        - name: device
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [web, mobile]
+      responses:
+        200:
+          description: All Good and Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  location:
+                    type: string
+                  device:
+                    type: string
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
