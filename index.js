@@ -68,7 +68,7 @@ app.get("/api/v1/coursequery", (req, res) => {
 
 app.post("/api/v1/courseupload", (req, res) => {
     const file = req.files.filename
-    let path = __dirname + "/images" + Date.now() + ".jpg"
+    let path = __dirname + "/images/" + Date.now() + ".jpg"
     file.mv(path, (err) => {
         res.send(true)
     })
