@@ -201,3 +201,24 @@ paths:
           description: Bad request
         500:
           description: Internal server error
+  /courseupload:
+    post:
+      tags:
+        - Array
+      summary: uploading course image
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                filename:
+                  type: string
+                  format: binary
+      responses:
+        200:
+          description: All Good and Success
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
