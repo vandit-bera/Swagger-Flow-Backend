@@ -58,7 +58,7 @@ app.post("/api/v1/addcourse", (req, res) => {
     res.status(200).send(true)
 })
 
-app.post("/api/v1/coursequery", (req, res) => {
+app.get("/api/v1/coursequery", (req, res) => {
     let location = req.query.location
     let device = req.query.device
     res.status(200).send({ location, device })
